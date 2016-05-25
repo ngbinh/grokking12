@@ -1,2 +1,2 @@
-# grokking7
+# grokking 12
 Full Stack Scala at Anduin Transactions slides
