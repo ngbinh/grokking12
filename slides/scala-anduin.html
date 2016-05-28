@@ -10,30 +10,92 @@
 </section>
 
 <section>
-  <h2>Anduin Scala code base</h2>
-
+  <h2>Anduin Scala WebApp Architecture</h2>
+  <img data-src="resources/anduin_architecture1.png"l class="stretch">
   <ol>
     <li class="fragment">Actor based backend on Akka</li>
-    <li class="fragment">Akka http server</li>
     <li class="fragment">Scala.js React client</li>
-    <li class="fragment">Scalaz, Monocle, Shapeless, Cats for type level programming</li>
   </ol>
+</section>
 
+<section data-transition-speed="fast">
+  <h2>Anduin Scala WebApp Architecture</h2>
+  <img data-src="resources/anduin_architecture3.png" class="stretch">
 </section>
 
 <section>
-  <h2>A fairly large Scala code base</h2>
-  <img data-src="resources/slocs.png">
+  <h2>Scala.js</h2>
+  <img class="fragment" data-src="resources/sjs-homepage.png">
 </section>
 
 <section>
-  <h2>Designers write Scala code</h2>
-  <img data-src="resources/designer_code_1.jpg">
+  <h2>Scala.js is Scala</h2>
+  <img class="fragment" data-src="resources/scala.js-pipeline.png">
 </section>
 
 <section>
-  <h2>Designers write Scala code</h2>
-  <img data-src="resources/designer_code_2.jpg">
+  <h2>Scala.js is Scala</h2>
+  <ul>
+    <li class="fragment">Can compile any valid Scala (no reflection)</li>
+    <li class="fragment">Can use Scala libraries directly (with some small changes to the build)</li>
+    <li class="fragment">
+      Great IDE supports
+        <ul>
+          <li class="fragment">Reliable refactoring</li>
+          <li class="fragment">Correct code completion</li>
+          <li class="fragment">Catch most errors when typing</li>
+        </ul>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Scala.js interpolates with JavaScript</h2>
+  <ul>
+    <li class="fragment">
+      Scala.js compiles to/inherits some good parts of JavaScript
+        <ul>
+          <li class="fragment">Highly optimized JavaScript output</li>
+          <li class="fragment">Fully asynchronous</li>
+        </ul>
+    </li>
+    <li class="fragment">
+      Very easy to use any JavaScript libraries in Scala.js
+      <ul>
+        <li>React.js, Angular.js</li>
+        <li>D3.js</li>
+        <li>JQuery</li>
+        <li>Google Map</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <img data-src="resources/js-pipeline.png">
+</section>
+
+<section>
+  <h2>...or it is easy to create your own</h2>
+  <pre>
+    <code data-trim data-noescape>
+trait Date extends js.Object {
+  def format(pattern: String): String = js.native
+}
+
+@JSName("moment")
+object Moment extends js.Object {
+  def apply(): Date = js.native
+}
+
+console.log(Moment().format("MMMM Do YYYY"))
+    </code>
+  </pre>
+</section>
+
+<section>
+  <h2>Scala.js is great!!!</h2>
+  <img data-src="resources/testimorials1.png" class="stretch">
 </section>
 
 <section>
@@ -61,3 +123,12 @@
       </code>
     </pre>
 </section>
+
+<section>
+  <h2>A fairly large Scala code base</h2>
+  March 2016
+  <img data-src="resources/slocs.png">
+  May 2016
+  <img data-src="resources/slocs_may282016.png">
+</section>
+
